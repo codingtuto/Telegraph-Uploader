@@ -1,5 +1,4 @@
 import os
-from telegraph import upload_file
 import pyrogram
 from pyrogram import filters, Client
 from pyrogram.types import (
@@ -7,6 +6,7 @@ from pyrogram.types import (
     InlineKeyboardMarkup, InlineKeyboardButton,
     CallbackQuery, InlineQuery)
 from dotenv import load_dotenv
+from telegraph import upload_file
 
 load_dotenv() # charge les variables d'environnement depuis le fichier .env
 api_id = os.getenv("APP_ID") # récupère la variable d'environnement "APP_ID"
