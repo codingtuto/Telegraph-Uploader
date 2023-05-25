@@ -83,8 +83,7 @@ Je peut uploader vos photos,vidéos et gifs pour les stocker sur le serveur publ
 
 Il vous suffit de m'envoyer une photo, une vidéo ou un gif à télécharger sur Telegra.ph.</b>""",
         reply_markup=reply_markup,
-        parse_mode="html",
-        reply_to_message_id=message.message_id
+        parse_mode="html"
     )
 
 @Tgraph.on_message(filters.command(["help"]))
