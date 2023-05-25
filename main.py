@@ -14,7 +14,6 @@ api_hash = os.getenv("API_HASH") # récupère la variable d'environnement "API_H
 bot_token = os.getenv("TG_BOT_TOKEN") # récupère la variable d'environnement "TG_BOT_TOKEN"
 Tgraph = Client("Telegra.ph Uploader", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
-
 @Tgraph.on_message(filters.photo)
 async def uploadphoto(client, message):
   msg = await message.reply_text("`Téléchargement....`")
