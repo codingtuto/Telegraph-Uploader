@@ -2,18 +2,18 @@ import os
 from telegraph import upload_file
 import pyrogram
 from pyrogram import filters, Client
-from graphlib import Config
 from pyrogram.types import (
     InlineQueryResultArticle, InputTextMessageContent,
     InlineKeyboardMarkup, InlineKeyboardButton,
     CallbackQuery, InlineQuery)
+from dotenv import load_dotenv
 
-Tgraph = Client(
-   "Telegra.ph Uploader",
-   api_id=Config.APP_ID,
-   api_hash=Config.API_HASH,
-   bot_token=Config.TG_BOT_TOKEN,
-)
+load_dotenv() # charge les variables d'environnement depuis le fichier .env
+api_id = os.getenv("APP_ID") # récupère la variable d'environnement "APP_ID"
+api_hash = os.getenv("API_HASH") # récupère la variable d'environnement "API_HASH"
+bot_token = os.getenv("TG_BOT_TOKEN") # récupère la variable d'environnement "TG_BOT_TOKEN"
+Tgraph = Client("Telegra.ph Uploader", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+
 
 @Tgraph.on_message(filters.photo)
 async def uploadphoto(client, message):
